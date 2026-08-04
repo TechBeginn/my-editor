@@ -1,16 +1,13 @@
 {
-  "name": "backend",
+  "name": "my-editor-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "Backend server for the real-time collaborative editor",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js",
+    "test": "node test/crdt.test.js && node test/documentRoom.test.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
 }
