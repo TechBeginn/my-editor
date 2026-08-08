@@ -1,7 +1,7 @@
 const { WebSocketServer } = require('ws');
 const { DocumentManager } = require('./documentRoom');
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 const manager = new DocumentManager();
 
 let nextClientId = 1;
