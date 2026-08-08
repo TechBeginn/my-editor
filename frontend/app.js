@@ -9,7 +9,7 @@ let myClientId = null;
 let previousText = '';   // what the textarea said last time, for diffing
 let applyingRemoteChange = false; // guard so we don't diff our own remote-triggered updates
 
-const ws = new WebSocket('ws://localhost:8080');
+const ws = new WebSocket('wss://my-editor-production.up.railway.app');
 
 ws.onopen = () => {
   statusEl.textContent = 'Connected';
