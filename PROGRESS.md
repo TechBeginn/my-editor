@@ -51,27 +51,29 @@ so it knows exactly where we left off.
 - CONFIRMED WORKING: typed text survives a full server restart
 - Added .gitignore (node_modules/, backend/data/) so generated files
   and saved documents don't get committed
-- Committed and pushed to GitHub
+- Deployed backend to Railway (tried Render first, hit an account
+  "name already in use" bug there, switched to Railway)
+- Had to fix backend/src/server.js to use `process.env.PORT || 8080`
+  instead of a hardcoded port, since Railway assigns its own port
+- Updated frontend/app.js to connect to `wss://` (secure) Railway URL
+  instead of localhost
+- KNOWN LIMITATION: Railway's free tier has no persistent disk, so
+  saved documents do NOT survive a Railway restart (persistence still
+  works correctly when self-hosted / run locally)
+- Hosted frontend via GitHub Pages (root of repo)
+- LIVE DEMO CONFIRMED WORKING END-TO-END: tested across laptop +
+  phone, real-time sync works over the actual internet
+- Live link: https://techbeginn.github.io/my-editor/frontend/index.html
+- Added GitHub repo description, topics, and live demo link at the
+  top of README.md
+- Everything committed and pushed to GitHub
 
 ## Next up (not started yet)
-- Deployment (Render) -- signing up for a Render account, not done yet
-- Add repo description + topics on GitHub (quick, improves how it
-  looks to recruiters)
 - Live cursors
 - Demo video/GIF for resume
 - Possibly upgrade frontend to React
-- Add "Known Limitations" section to README about interleaving anomaly
-
-## About me
-- Final-year BTech CS student, building this for my resume/portfolio
-- I'm new to git, npm, and terminal workflows -- please explain things
-  in plain, simple language by default (I'll ask for professional
-  wording separately if I need it for something specific)
-- Give me ONE step at a time, don't dump a wall of steps at once
-- I'm on Windows using Git Bash (not cmd)
-- If I hit a "file not found" type error, check whether it's the
-  dual-Desktop-folder issue before assuming I did something wrong
-
+- Add "Known Limitations" section to README (interleaving anomaly +
+  Railway free-tier persistence limitation)
 ## How to resume a session
 1. Paste this file
 2. Paste your latest code (or say "check my repo")
